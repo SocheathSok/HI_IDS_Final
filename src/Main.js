@@ -15,6 +15,13 @@ export default class Main extends React.Component {
         }
 
         this.dataManager = DataManager.getInstance()
+
+        this.Interval = setInterval(() => {
+            let latestValue = this.dataManager.storage[this.dataManager.storage.length-1]
+            if (latestValue >= 10) {
+                this.openDialog()
+            }
+        }, 50)
     }
 
     openDialog = () => {
@@ -29,14 +36,14 @@ export default class Main extends React.Component {
         }
     }
     render() {
-        
+
         return (
             <Container>
                 {/* <MainNavigator></MainNavigator>  */}
                 <Header hasTabs>
                     <Left style={{ flex: 1 }}></Left>
                     <Body style={{ flex: 1 }}>
-                        <Title style={{ alignSelf: "center", fontWeight: "bold", fontSize: 20, color:'aqua' }}> HI-IDS </Title>
+                        <Title style={{ alignSelf: "center", fontWeight: "bold", fontSize: 20, color: 'aqua' }}> HI-IDS </Title>
                     </Body>
                     <Right style={{ flex: 1 }}></Right>
                 </Header>

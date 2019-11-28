@@ -1,5 +1,6 @@
-import { BleManager } from 'react-native-ble-plx'
+import { BleManager, Characteristic } from 'react-native-ble-plx'
 import { PermissionsAndroid } from 'react-native'
+global.Buffer = global.Buffer || require('buffer').Buffer
 
 export default class DataManager {
     static instance = null
@@ -13,11 +14,7 @@ export default class DataManager {
     constructor() {
         this.bluetoothManager = new BleManager();
         this.storage = []
-
-        this.bluetoothManager.onStateChange((newState) => {
-            console.log(newState)
-        })
-        this.scanNearbyDevice()
+        this.scanAndConnect()
     }
 
     scanAndConnect() {
@@ -28,12 +25,31 @@ export default class DataManager {
                     console.log(error)
                     return
                 }
-
                 ///Check for specific device and connect
+                if (device.id == "E5:EB:28:02:B7:85") {
+                    this.bluetoothManager.stopDeviceScan()
+                    device.connect().then((device) => {
+                        console.log("Connecting to device...")
+                        return device.discoverAllServicesAndCharacteristics()
+                    }).then(device => {
+                        return device.services()
+                    }).then(services => {
+                        return services[services.length - 1]
+                    }).then(service => {
+                        return service.characteristics()
+                    }).then(characteristics => {
+                        characteristics[characteristics.length - 1].monitor((err, characteristic) => {
+                            const buf = Buffer.from(characteristic.value, 'base64')
+                            this.storage.push(buf.readInt8())
+                        })
+                    })
+                }
 
             })
         }
     }
+
+    
 
     async requestBluetoothPermission() {
         try {

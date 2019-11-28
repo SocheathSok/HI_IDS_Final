@@ -1,0 +1,28 @@
+[
+    {
+        "_manager": {
+            "_activePromises": [Object
+            ],
+            "_activeSubscriptions": [Object
+            ],
+            "_errorCodesToMessagesMapping": [Object
+            ],
+            "_eventEmitter": [NativeEventEmitter
+            ],
+            "_scanEventSubscription": null,
+            "_uniqueId": 6
+        },
+        "deviceID": "E5:EB:28:02:B7:85",
+        "id": 8,
+        "isIndicatable": false,
+        "isNotifiable": true,
+        "isNotifying": false,
+        "isReadable": true,
+        "isWritableWithResponse": false,
+        "isWritableWithoutResponse": false,
+        "serviceID": 7,
+        "serviceUUID": "19b10000-e8f2-537e-4f6c-d104768a1214",
+        "uuid": "19b10000-e8f2-537e-4f6c-d104768a1214",
+        "value": null
+    }
+]
