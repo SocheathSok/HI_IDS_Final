@@ -47,23 +47,35 @@ export default class DataManager {
                         })
                         device.connect()
                             .then((device) => {
-                                console.log('Succesfully connected to compatible device.')
-                                return device.discoverAllServicesAndCharacteristics()
+                                if (device) {
+                                    console.log('Succesfully connected to compatible device.')
+                                    return device.discoverAllServicesAndCharacteristics()
+                                }
                             })
                             .then(device => {
-                                return device.services()
+                                if (device)
+                                    return device.services()
                             })
                             .then(services => {
-                                return services[services.length - 1]
+                                if (services)
+                                    return services[services.length - 1]
                             })
                             .then(service => {
-                                return service.characteristics()
+                                if (service)
+                                    return service.characteristics()
                             })
                             .then(characteristics => {
-                                characteristics[characteristics.length - 1].monitor((err, characteristic) => {
-                                    const buf = Buffer.from(characteristic.value, 'base64')
-                                    this.storage.push(buf.readInt8())
-                                })
+                                if (characteristics)
+                                    characteristics[characteristics.length - 1].monitor((err, characteristic) => {
+                                        if (characteristic && characteristic.value) {
+                                            const buf = Buffer.from(characteristic.value, 'base64')
+                                            this.storage.push(buf.readInt8())
+                                        }
+
+                                    })
+                            }).catch(err => {
+                                console.log("Connecting problem...")
+                                device.cancelConnection()
                             })
                     }
 
