@@ -5,9 +5,10 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "npx react-native run-android",
+    "start": "npm run clean && npx react-native run-android",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean":"@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./cleanCache.ps1"
   },
   "dependencies": {
     "buffer": "^5.4.3",
