@@ -8,17 +8,20 @@
     "start": "npm run clean && npx react-native run-android",
     "test": "jest",
     "lint": "eslint .",
-    "clean":"@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./cleanCache.ps1"
+    "clean": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./cleanCache.ps1"
   },
   "dependencies": {
     "buffer": "^5.4.3",
     "native-base": "^2.13.8",
+    "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-ble-plx": "^1.1.0",
     "react-native-dialog": "^5.6.0",
     "react-native-easy-grid": "^0.2.2",
     "react-native-gesture-handler": "^1.5.1",
+    "react-native-svg": "^9.13.3",
+    "react-native-svg-charts": "^5.3.0",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3"
   },
