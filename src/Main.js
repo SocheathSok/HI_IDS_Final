@@ -38,18 +38,18 @@ export default class Main extends React.Component {
     render() {
 
         return (
-            <Container>
+            <Container >
                 {/* <MainNavigator></MainNavigator>  */}
-                <Header hasTabs>
+                <Header hasTabs >
                     <Left style={{ flex: 1 }}></Left>
                     <Body style={{ flex: 1 }}>
                         <Title style={{ alignSelf: "center", fontWeight: "bold", fontSize: 20, color: 'aqua' }}> HI-IDS </Title>
                     </Body>
                     <Right style={{ flex: 1 }}></Right>
                 </Header>
-
+  
                 <Tabs renderTabBar={() => <ScrollableTab />}>
-                    <Tab heading="Graph">
+                    <Tab heading="Graph" >
                         <History></History>
                     </Tab>
                     <Tab heading="Product" >

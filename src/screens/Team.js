@@ -1,5 +1,4 @@
 import React from 'react'
-import { Col, Row, Grid } from 'react-native-easy-grid';
 import { Text, Container, Thumbnail, View } from 'native-base';
 
 export default class Team extends React.Component {
@@ -16,13 +15,13 @@ export default class Team extends React.Component {
                             <Thumbnail large source={require("../img/Jasmine.jpg")} />  
                             <Text>Jasmine Arrieta </Text>
                             <Text note>Emphasis: Electronics</Text>
-                            <Text note>Role: Hardware Design</Text>
+                            <Text note>Role: Hardware Engineer</Text>
                         </View>
                         <View style = {{backgroundColor:'ghostwhite', flex:1, marginRight:20, justifyContent: 'center', alignItems:'center'}}>
                             <Thumbnail large source={require("../img/Rhyan.jpg")} />
                             <Text>Rhyan Gonzalez</Text>
                             <Text note>Emphasis: Electronics</Text>
-                            <Text note>Role: Hardware Design</Text>
+                            <Text note>Role: Hardware Engineer</Text>
                         </View>
                     </View>
                 </View>
@@ -32,13 +31,13 @@ export default class Team extends React.Component {
                             <Thumbnail large source={require("../img/Socheath.jpg")} />
                             <Text>Socheath Sok</Text>
                             <Text note>Emphasis: Biomedical</Text>
-                            <Text note>Role: Software Design</Text>
+                            <Text note>Role: Software Engineer</Text>
                         </View>
                         <View style = {{backgroundColor:'ghostwhite', flex:1, marginRight: 20, justifyContent: 'center', alignItems:'center'}}>
                             <Thumbnail large source={require("../img/Calvin.jpg")} />
                             <Text>Calvin Lee</Text>
                             <Text note>Emphasis: Communications</Text>
-                            <Text note>Role: Software Design</Text>
+                            <Text note>Role: ???</Text>
                         </View>
                     </View>
                 </View>
