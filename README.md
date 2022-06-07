@@ -26,14 +26,15 @@ Helmet Integrated Impact Detection System (HI-IDS)
 
 
 <!-- Description -->
-In this project, the goal was to create a prototype of an impact detection system.
+In this project, the goal was to create a prototype of an impact detection system. The accelerometer is powered by a portable battery and programmed in such a way as to detect the amount of force inflicted on the helmet. This continuous data is, then, sent toward the mobile app to be plotted. A threshold value is set so that if the force exceeds the concussion level, a warning will be displayed on the app. Additionally, other screens were also set up to display basic information about the projects and team members inside the app. 
 
 
 
 <!-- Include externals file that you need to run the program -->
- ## Requirements 
- Video Demo
+ ## Demo 
  - [Testing][Video]
+ - [Mobile App]
+
 
 
 <!-- Include your major tools and frameworks -->
@@ -104,6 +105,7 @@ Special thank to
 [ADXL337]: https://learn.sparkfun.com/tutorials/adxl337-and-adxl377-accelerometer-hookup-guide/all
 [Battery]: https://www.sweetwater.com/store/detail/SB902A--shure-sb902a-rechargeable-lithium-ion-battery
 [Helmet]: https://www.amazon.com/Riddell-Victor-Youth-Helmet-X-Large/dp/B07CVCSCGR/ref=sr_1_1?c=ts&keywords=Football+Helmets&qid=1654408527&s=team-sports&sr=1-1&ts_id=3410681
+[Mobile App]: https://github.com/SocheathSok/HI_IDS_Final/tree/master/Mobile%20App
 [Reference]: https://learn.sparkfun.com/tutorials/raspberry-pi-zero-helmet-impact-force-monitor
 
 [Best-README-Template]: https://github.com/othneildrew/Best-README-Template
